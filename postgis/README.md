@@ -1,4 +1,4 @@
-# PostGis
+# PostGIS
 
 You can change default values in `docker-compose.yml` for your.
 
