@@ -5,6 +5,7 @@ Docker composes for common use service.
 | ------ | ------ | ------ |
 | mysql | [mysql](https://hub.docker.com/_/mysql/) | [get](./mysql) |
 | postgis | [mdillon/postgis](https://hub.docker.com/r/mdillon/postgis/) | [get](./postgis) |
+| aria2 | [xujinkai/aria2-with-webui](https://hub.docker.com/r/xujinkai/aria2-with-webui) | [get](./aria2) |
 
 ## usage
 
