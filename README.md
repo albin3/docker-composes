@@ -6,6 +6,7 @@ Docker composes for common use service.
 | mysql | [mysql](https://hub.docker.com/_/mysql/) | [get](./mysql) |
 | postgis | [mdillon/postgis](https://hub.docker.com/r/mdillon/postgis/) | [get](./postgis) |
 | aria2 | [xujinkai/aria2-with-webui](https://hub.docker.com/r/xujinkai/aria2-with-webui) | [get](./aria2) |
+| v2ray | [wangyi2005/v2ray](https://hub.docker.com/r/wangyi2005/v2ray) | [get](./v2ray) |
 
 ## usage
 
@@ -16,3 +17,4 @@ Docker composes for common use service.
 - run `docker-compose down --volumes` to remove service and delete data.
 
 for more details, see docker-compose [get started](https://github.com/docker/docker.github.io/blob/master/compose/gettingstarted.md)
+
