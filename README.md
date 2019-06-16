@@ -10,7 +10,7 @@ Docker composes for common use service.
 
 ## usage
 
-- run `docker-compose up` in service directory to create and start service.
+- run `docker-compose up -d` in service directory to create and start service.
 - run `docker-compose start` in service directory to start service.
 - run `docker-compose pause` in service directory to pause service.
 - run `docker-compose stop` to pause service.

@@ -4,6 +4,7 @@ services:
 
   aria2:
     image: xujinkai/aria2-with-webui
+    container_name: aria2
     restart: always
     volumes:
       - ~/aria2/data:/data # where to store data.
