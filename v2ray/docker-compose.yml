@@ -9,7 +9,7 @@ services:
     command: v2ray -config=/etc/v2ray/config.json
     ports:
       - 8085:8888 # export service port to host machine, host_port:container_port.
-    volumns:
+    volumes:
       - ./v2ray:/etc/v2ray
       #- /etc/v2ray/v2ray.crt:/etc/v2ray/v2ray.crt
       #- /etc/v2ray/v2ray.key:/etc/v2ray/v2ray.key
