@@ -1,0 +1,23 @@
+{
+  "log": {
+    "access": "./access.log",
+    "error": "./error.log",
+    "loglevel": "warning"
+  },
+  "inbounds": [{
+    "protocol": "vmess",
+    "port": 8888,
+    "settings": {
+      "clients": [
+        {
+          "id": "fill uuid here.",
+          "alterId": 64
+        }
+      ]
+    }
+  }],
+  "outbounds": [{
+    "protocol": "freedom",
+    "settings": {}
+  }]
+}
