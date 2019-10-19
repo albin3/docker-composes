@@ -6,6 +6,7 @@ services:
     image: v2ray/official
     container_name: v2ray
     restart: always
+    privileged: true  # add for centos7 firewall.
     command: v2ray -config=/etc/v2ray/config.json
     ports:
       - 8085:8888 # export service port to host machine, host_port:container_port.

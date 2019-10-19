@@ -6,6 +6,7 @@ services:
     image: "mdillon/postgis"
     container_name: postgis
     restart: always
+    privileged: true  # add for centos7 firewall.
     volumes:
       - "/data/postgis:/var/lib/postgresql/data" # default volumn path is /data/postgis.
     ports:

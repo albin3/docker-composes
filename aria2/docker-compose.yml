@@ -6,6 +6,7 @@ services:
     image: xujinkai/aria2-with-webui
     container_name: aria2
     restart: always
+    privileged: true  # add for centos7 firewall.
     volumes:
       - ~/aria2/data:/data # where to store data.
       - ~/aria2/conf:/conf # where to store config.
