@@ -3,7 +3,8 @@ version: '3.1'
 services:
 
   postgis:
-    image: "mdillon/postgis"
+    # image: "mdillon/postgis"
+    image: "mdillon/postgis:10"
     container_name: postgis
     restart: always
     privileged: true  # add for centos7 firewall.
