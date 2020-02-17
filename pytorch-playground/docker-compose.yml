@@ -1,0 +1,19 @@
+version: '3.1'
+
+services:
+
+  pytorch-playground:
+    image: "ufoym/deepo"
+    command: jupyter notebook --no-browser --ip=0.0.0.0 --allow-root --NotebookApp.token= --notebook-dir='/root'
+    container_name: pytorch-playground
+    restart: always
+    ipc: host
+    privileged: true  # add for centos7 firewall.
+    volumes:
+      - "/data:/data"
+      - "~/pytorch_playground_config:/config"
+      - "~/:/root"
+    ports:
+      - "8001:8888" # port 5432 of host machine will be listened.
+    environment:
+      - POSTGRES_DB=postgres # default database is "postgres".
