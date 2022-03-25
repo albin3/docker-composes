@@ -4,16 +4,15 @@ services:
 
   postgis:
     # image: "mdillon/postgis"
-    image: "mdillon/postgis:10"
-    container_name: postgis
+    image: "kartoza/postgis:14"
+    container_name: postgis14
     restart: always
     privileged: true  # add for centos7 firewall.
     volumes:
-      - "/Users/albinzeng/dbfile/postgis:/var/lib/postgresql/data" # default volumn path is /data/postgis.
+      - "/Users/albinzeng/dbfile/postgis14:/var/lib/postgresql/" # default volumn path is /data/postgis.
     ports:
       - "5432:5432" # port 5432 of host machine will be listened.
     environment:
       - POSTGRES_PASSWORD=1 # default password is "1".
       - POSTGRES_USER=postgres # default username is "postgres".
-      - PGDATA=/var/lib/postgresql/data # folder in container to store data.
       - POSTGRES_DB=postgres # default database is "postgres".
