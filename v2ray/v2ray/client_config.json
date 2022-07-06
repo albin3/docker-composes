@@ -1,0 +1,83 @@
+{
+  "outbound" : {
+    "sendThrough" : "0.0.0.0",
+    "mux" : {
+      "enabled" : false,
+      "concurrency" : 8
+    },
+    "protocol" : "vmess",
+    "settings" : {
+      "vnext" : [
+        {
+          "address" : "<TODO: hostname>",
+          "users" : [
+            {
+              "id" : "<TODO: uuid>",
+              "alterId" : 64,
+              "security" : "chacha20-poly1305",
+              "level" : 0
+            }
+          ],
+          "port" : 443
+        }
+      ]
+    },
+    "tag" : "client",
+    "streamSettings" : {
+      "wsSettings" : {
+        "path" : "\/proxy\/",
+        "headers" : {
+          "Host" : "<TODO: hostname>"
+        }
+      },
+      "quicSettings" : {
+        "key" : "",
+        "security" : "none",
+        "header" : {
+          "type" : "none"
+        }
+      },
+      "tlsSettings" : {
+        "allowInsecure" : false,
+        "alpn" : [
+          "http\/1.1"
+        ],
+        "serverName" : "<TODO: hostname>",
+        "allowInsecureCiphers" : false
+      },
+      "httpSettings" : {
+        "path" : ""
+      },
+      "kcpSettings" : {
+        "header" : {
+          "type" : "none"
+        },
+        "mtu" : 1350,
+        "congestion" : false,
+        "tti" : 20,
+        "uplinkCapacity" : 5,
+        "writeBufferSize" : 1,
+        "readBufferSize" : 1,
+        "downlinkCapacity" : 20
+      },
+      "tcpSettings" : {
+        "header" : {
+          "type" : "none"
+        }
+      },
+      "security" : "tls",
+      "network" : "ws"
+    }
+  },
+  "inbound" : {
+    "listen" : "127.0.0.1",
+    "port" : 1080,
+    "protocol" : "socks",
+    "settings" : {
+      "auth" : "noauth",
+      "udp" : false,
+      "ip" : "127.0.0.1"
+    }
+  }
+}
+
