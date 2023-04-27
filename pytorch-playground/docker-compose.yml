@@ -10,9 +10,9 @@ services:
     ipc: host
     privileged: true  # add for centos7 firewall.
     volumes:
-      - "/data:/data"
-      - "~/pytorch_playground_config:/config"
-      - "~/:/root"
+      - ./data:/data
+      - ./config:/config
+      - ./root:/root
     ports:
       - "8001:8888" # port 5432 of host machine will be listened.
     environment:
