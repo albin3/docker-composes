@@ -9,7 +9,7 @@ services:
     restart: always
     privileged: true  # add for centos7 firewall.
     volumes:
-      - "/Users/albinzeng/dbfile/postgis14:/var/lib/postgresql/" # default volumn path is /data/postgis.
+      - ./data:/var/lib/postgresql/ # default volumn path is /data/postgis.
     ports:
       - "5432:5432" # port 5432 of host machine will be listened.
     environment:
