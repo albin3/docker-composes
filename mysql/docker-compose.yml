@@ -9,9 +9,12 @@ services:
     restart: always
     privileged: true  # add for centos7 firewall.
     volumes:
+      # - ./my.cnf:/etc/my.cnf # where to store data.
+      - ./init/:/docker-entrypoint-initdb.d/
       - /data/mysql:/var/lib/mysql # where to store data.
       # - /my/custom:/etc/mysql/conf.d  # customer config.
     ports:
-      - 3306:3306 # export mysql port to host machine.
+      - 33063:3306 # export mysql port to host machine.
     environment:  # more options see https://hub.docker.com/_/mysql/.
-      MYSQL_ROOT_PASSWORD: 1
+      TZ: Asia/Shanghai
+      MYSQL_DATABASE: test
