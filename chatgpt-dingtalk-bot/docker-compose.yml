@@ -1,0 +1,18 @@
+version: '3.1'
+
+services:
+
+  postgis:
+    image: "aidenlu/chatgpt-dingtalk-bot:latest"
+    container_name: chatgpt-dingdalk-bot
+    restart: always
+    privileged: true  # add for centos7 firewall.
+    volumes:
+      - "/Users/albinzeng/dbfile/postgis14:/var/lib/postgresql/" # default volumn path is /data/postgis.
+    ports:
+      - "5432:5432" # port 5432 of host machine will be listened.
+    environment:
+      - GPT_API_KEY=
+      - DINGTALK_APP_KEY=
+      - DINGTALK_APP_SECRET=
+      - GPT_MODEL=gpt-3.5-turbo
