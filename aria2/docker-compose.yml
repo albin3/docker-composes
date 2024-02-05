@@ -8,8 +8,8 @@ services:
     restart: always
     privileged: true  # add for centos7 firewall.
     volumes:
-      - ~/aria2/data:/data # where to store data.
-      - ~/aria2/conf:/conf # where to store config.
+      - ./data:/data # where to store data.
+      - ./conf:/conf # where to store config.
     ports:
       - 6800:6800 # export mysql port to host machine.
       - 6880:80 # export mysql port to host machine.
