@@ -9,9 +9,24 @@ services:
     restart: always
     privileged: true  # add for centos7 firewall.
     volumes:
-      - ./mysql:/var/lib/mysql # where to store data.
+      - ./data:/var/lib/mysql # where to store data.
       # - /my/custom:/etc/mysql/conf.d  # customer config.
     ports:
       - 3306:3306 # export mysql port to host machine.
     environment:  # more options see https://hub.docker.com/_/mysql/.
       MYSQL_ROOT_PASSWORD: 1
+
+  mysql-workbench:
+    image: lscr.io/linuxserver/mysql-workbench:latest
+    container_name: mysql-workbench
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Shanghai
+    volumes:
+      - ./workbench/config:/config
+    ports:
+      - 3000:3000
+    cap_add:
+      - IPC_LOCK
+    restart: unless-stopped

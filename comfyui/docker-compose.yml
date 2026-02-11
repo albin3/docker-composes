@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  comfyui:
+    image: yanwk/comfyui-boot:cu128-slim
+    container_name: comfyui
+    runtime: nvidia
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    ports:
+      - "8188:8188"
+    volumes:
+      - ./storage:/root
+      - ./storage-models/models:/root/ComfyUI/models
+      - ./storage-models/hf-hub:/root/.cache/huggingface/hub
+      - ./storage-models/torch-hub:/root/.cache/torch/hub
+      - ./storage-user/input:/root/ComfyUI/input
+      - ./storage-user/output:/root/ComfyUI/output
+      - ./storage-user/workflows:/root/ComfyUI/user/default/workflows
+    environment:
+      - CLI_ARGS=--disable-xformers
+    stdin_open: true   # 相当于 -i
+    tty: true          # 相当于 -t
