@@ -24,5 +24,6 @@ services:
       - ./storage-user/workflows:/root/ComfyUI/user/default/workflows
     environment:
       - CLI_ARGS=--disable-xformers
+      - HF_ENDPOINT=https://hf-mirror.com
     stdin_open: true   # 相当于 -i
     tty: true          # 相当于 -t
